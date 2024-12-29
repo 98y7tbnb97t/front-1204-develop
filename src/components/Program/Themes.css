@@ -1,0 +1,25 @@
+.theme-container{
+        padding-right: 15px;
+}
+
+
+.theme-container::-webkit-scrollbar {
+        width: 10px;
+}
+
+.theme-container::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgb(0, 0, 0, 0.0);
+        border: 2px solid ;
+}
+.wave {
+        width: 100%;
+        height: 10px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='10' viewBox='0 0 100 10'%3E%3Cpath d='M 0 5 Q 5 3 10 5 T 20 5 T 30 5 T 40 5 T 50 5 T 60 5 T 70 5 T 80 5 T 90 5 T 100 5' fill='transparent' stroke='%23ff0000' stroke-width='2'/%3E%3C/svg%3E") repeat-x;
+}
+
+.mouse-select__frame {
+background: red;
+opacity: 0.5;
+z-index: 100000000;
+}

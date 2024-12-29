@@ -1,0 +1,25 @@
+.tab-mob {
+    display: none!important;
+}
+
+.stopLesson-btn {
+    background: linear-gradient(0deg, #FF0000 0%, rgba(255, 0, 0, 0.55) 24.9%, #FF0000 52.5%, rgba(255, 0, 0, 0.55) 83.75%, #FF0000 100%);
+    line-height: 1.2;
+
+}
+
+@media (max-width: 1280px) {
+    .tab-desk {
+        display: none!important;
+    }
+
+    .tab-mob {
+        display: block!important;
+    }
+}
+
+@media (max-width: 940px) {
+    .panelWrapper {
+        max-height: 200px;
+    }
+}

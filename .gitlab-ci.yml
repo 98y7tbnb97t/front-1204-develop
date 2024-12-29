@@ -1,0 +1,85 @@
+image: node:20.15
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - check
+  - deploy
+
+variables:
+  GIT_STRATEGY: fetch
+  REMOTE_IP_STAGING: 79.174.95.184
+  REMOTE_IP_PRODUCTION: 89.108.83.226
+  SSH_OPT: '-o StrictHostKeyChecking=no'
+  VERSION: "0.0.4"
+  PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${CI_PROJECT_NAME}/$VERSION"
+  STAGING_RELEASENAME: "araratchess-staging"
+  PRODUCTION_RELEASENAME: "araratchess-production"
+  NODE_OPTIONS: "--max-old-space-size=4096"
+  
+before_script:
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo "Host * ntStrictHostKeyChecking no" >> ~/.ssh/config
+  - ssh-keyscan -t rsa $REMOTE_IP_STAGING >> ~/.ssh/known_hosts
+  - ssh-keyscan -t rsa $REMOTE_IP_PRODUCTION >> ~/.ssh/known_hosts
+
+front_build:
+  image: node:latest
+  stage: build
+  script:
+    - npm i --force
+    - npm run build
+    - 'tar czf "${CI_PROJECT_DIR}/${STAGING_RELEASENAME}.tgz" dist'
+    - 'tar czf "${CI_PROJECT_DIR}/${PRODUCTION_RELEASENAME}.tgz" dist'
+    - echo "Archive ${CI_PROJECT_DIR}/${STAGING_RELEASENAME}.tgz created"
+    - echo "Archive ${CI_PROJECT_DIR}/${PRODUCTION_RELEASENAME}.tgz created"
+    - 'curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "${STAGING_RELEASENAME}.tgz" "${PACKAGE_REGISTRY_URL}/${STAGING_RELEASENAME}.tgz"'
+    - 'curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "${PRODUCTION_RELEASENAME}.tgz" "${PACKAGE_REGISTRY_URL}/${PRODUCTION_RELEASENAME}.tgz"'
+  artifacts:
+    paths:
+      - ${STAGING_RELEASENAME}.tgz
+      - ${PRODUCTION_RELEASENAME}.tgz
+  only:
+    - master
+    - develop
+    - CICD_test
+
+front_deploy:
+  stage: deploy
+  script:
+#    - 'wget --header="JOB-TOKEN: ${CI_JOB_TOKEN}" ${PACKAGE_REGISTRY_URL}/${RELEASENAME}.tgz'
+    - 'scp ${CI_PROJECT_DIR}/${STAGING_RELEASENAME}.tgz root@$REMOTE_IP_STAGING:/var/www'
+    - MSG="cd /var/www && rm -rfd dist && rm -rfd assets && tar -xf ${STAGING_RELEASENAME}.tgz && mv dist/* . "
+    #- MSG="$MSG && rm -f ${RELEASENAME}.tgz"
+    - echo "Command=$MSG"
+    - 'ssh $SSH_OPT root@$REMOTE_IP_STAGING "$MSG"'
+  needs:
+    - job: front_build
+      artifacts: true
+  only:
+    - develop
+    - CICD_test
+
+# front_check:
+#   when: manual
+# #  image: node:latest
+#   stage: check
+#   script:
+#     - echo "Checking frontend soft..."
+#     - ./setup.sh $REMOTE_IP_STAGING check
+#   only:
+#     - CICD_test
+# #    - develop
+
+front_deploy_production:
+  stage: deploy
+  script:
+    - 'scp ${CI_PROJECT_DIR}/${PRODUCTION_RELEASENAME}.tgz root@$REMOTE_IP_PRODUCTION:/var/www/html/frontend'
+    - MSG="cd /var/www/html/frontend && rm -rfd dist && rm -rfd assets && tar -xf ${PRODUCTION_RELEASENAME}.tgz && mv dist/* ."
+    - echo "Command=$MSG"
+    - 'ssh $SSH_OPT root@$REMOTE_IP_PRODUCTION "$MSG"'
+  needs:
+    - job: front_build
+      artifacts: true
+  only:
+    - master  # Deploy only when changes are merged to the master branch

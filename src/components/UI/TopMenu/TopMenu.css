@@ -1,0 +1,8 @@
+
+
+
+@media (max-width: 1280px) {
+    .menuItem-mob {
+        display: none!important;
+    }
+}

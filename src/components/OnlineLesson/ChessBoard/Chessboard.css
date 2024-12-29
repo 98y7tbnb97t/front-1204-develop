@@ -1,0 +1,19 @@
+.board {
+    max-width: 600px;
+    max-height: 600px;
+}
+
+
+@media (max-width: 1300px) {
+    .board {
+        max-width: 500px;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .board {
+        max-width: unset;
+        max-height:  unset;
+    }
+}

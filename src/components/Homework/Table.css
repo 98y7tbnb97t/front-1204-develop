@@ -1,0 +1,26 @@
+
+
+@media (max-width: 1024px) {
+    .title-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .item-main {
+        justify-content: space-between;
+    }
+
+    .table-desk {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .item-main {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

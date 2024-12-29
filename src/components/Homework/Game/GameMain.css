@@ -1,0 +1,9 @@
+.game-main {
+    max-height: calc(100vh - 250px);
+    height: 100%;
+}
+
+.game-main-mob {
+    max-height: 300px;
+    height: 100%;
+}

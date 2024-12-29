@@ -1,0 +1,16 @@
+.item-img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    padding-top: 4px;
+}
+
+.item-text {
+    font-size: 10px;
+    margin-bottom: 4px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 50px;
+    padding: 0 2px;
+}

@@ -1,0 +1,5 @@
+.topbar {
+    display: grid!important;
+    justify-items: flex-start;
+    grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr;
+}

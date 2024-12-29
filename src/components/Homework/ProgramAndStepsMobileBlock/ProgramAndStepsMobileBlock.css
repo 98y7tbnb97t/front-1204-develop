@@ -1,0 +1,98 @@
+.programAndStepsMobileBlock {
+    display: none;
+    min-height: 200px;
+    flex-direction: column;
+    overflow-y: auto;
+
+}
+
+.tabs-container {
+    background: linear-gradient(0deg, rgba(183, 151, 90, 0.187) 0%, rgba(138, 110, 62, 0.22) 7.71%, rgba(231, 193, 115, 0.22) 49.37%, rgba(231, 193, 115, 0.22) 74.9%, rgba(138, 110, 62, 0.22) 100%);
+    padding: 12px;
+    border-radius: 20px;
+    align-items: stretch;
+}
+
+.tabBtn {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    display: block;
+}
+
+
+.tabBtn-mob {
+    display: none;
+}
+
+.programAndStepsMobileBlock--content {
+    max-width: 200px;
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.tabBtn-tab {
+    display: none;
+}
+
+.steps-text {
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+@media (max-width: 1280px) {
+    .programAndStepsMobileBlock {
+        display: flex;
+    }
+
+
+    .programAndStepsMobileBlock--content {
+        max-width: none;
+    }
+
+    .tabs-container {
+        display: flex;
+        flex-direction: row;
+        padding: 6px;
+        flex-wrap: wrap;
+    }
+
+    .tabBtn-tab {
+        display: block;
+    }
+
+}
+
+@media (max-width: 940px) {
+    .programAndStepsMobileBlock {
+        height: calc(100vh - 10px);
+    }
+
+    .programAndStepsMobileBlock--content {
+        height: calc(100% - 60px);
+    }
+
+    .tabBtn-title {
+        min-width: 90px;
+        height: 100%;
+        line-height: 1.2;
+        font-size: 12px;
+        margin-top: 0;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+    .tabBtn-tab {
+        display: none;
+    }
+
+    .tabBtn-mob {
+        display: block;
+    }
+
+    .programAndStepsMobileBlock {
+        height: 100%;
+    }
+}

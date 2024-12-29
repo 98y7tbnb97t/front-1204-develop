@@ -1,0 +1,29 @@
+.board-mob {
+    width: calc(100vh - 150px);
+}
+
+.board-desk {
+    width: calc(100vh - 200px);
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .board-desk {
+        width: calc(100vh - 220px);
+    }
+}
+
+@media (min-width: 450px) and (max-width: 940px) {
+    .board-mob {
+        width: calc(100vh - 60px);
+    }
+}
+
+
+@media (max-width: 500px) {
+    .playbar {
+        gap: 10px;
+    }
+}

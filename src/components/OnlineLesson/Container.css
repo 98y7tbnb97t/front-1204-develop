@@ -1,0 +1,34 @@
+.mob-block,.mob-desk-block {
+    display: none;
+}
+
+
+
+
+@media (max-width: 1280px) {
+    .desk-block {
+        display: none!important;
+    }
+
+    .mob-block {
+        display: block;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1280px) {
+    .mob-desk-block {
+        display: block;
+    }
+}
+
+@media (max-width: 940px) {
+    .lesson-container {
+        flex-direction: column;
+        height: 100%!important;
+    }
+
+    .meeting-container {
+        width: 100%!important;
+        padding: 0!important;
+    }
+}

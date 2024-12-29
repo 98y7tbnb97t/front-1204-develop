@@ -1,0 +1,18 @@
+
+
+@media (max-width: 1024px) {
+    .logoImg-tab {
+        display: block;
+        margin-top: 4px;
+        margin-bottom: 16px;
+    }
+
+
+    .logout-block {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

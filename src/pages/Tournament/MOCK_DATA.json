@@ -1,0 +1,9 @@
+[{"number":1,"name":"Alice","email":"dgeibel0@twitter.com","gender":"Male","date_of_birth":"1990-05-12","age":25,"male":"Америка","phone":"1111111"},
+
+{"number":2,"name":"Boris","email":"tmullineux1@sina.com.cn","gender":"Male","date_of_birth":"1982-11-07","age":47,"country":"Россия","phone":"2222222"},
+
+{"number":3,"name":"Chen","email":"ksexten2@a8.net","gender":"Male","date_of_birth":"1979-12-01","age":60,"country":"Китай","phone":"3333333"},
+
+{"number":4,"name":"Davnumber","score":"65","gender":"Female","date_of_birth":"1995-04-20 ","age":34,"country":"Англия","phone":"4444444"},
+
+{"number":5,"name":"Emily","email":"magett4@bloglovin.com","gender":"Female","date_of_birth":"2001-09-15","age":22,"country":"Германия","phone":"5555555"}]

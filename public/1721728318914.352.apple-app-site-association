@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "Z857K94KBY.puzzle.ararat.chess",
+                "paths": ["*"]
+            }
+        ]
+    }
+}

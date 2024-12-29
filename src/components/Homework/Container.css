@@ -1,0 +1,84 @@
+.main-container {
+    height: calc(100vh - 150px);
+}
+
+
+.term-block {
+    min-width: 145px;
+}
+
+.chessboard-container {
+    max-width: calc(100% - 300px);
+}
+
+
+
+@media (max-width: 1280px) {
+    .game-container {
+        display: none;
+    }
+
+
+}
+
+
+@media (max-width: 1024px) {
+
+
+    .main-title {
+        font-size: 16px;
+        line-height: 1.2;
+        margin-bottom: 2px;
+    }
+
+    .term-block {
+        padding: 8px 6px;
+        font-size: 14px;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .header {
+        padding: 6px 12px;
+        height: auto;
+    }
+
+    .top-block {
+        margin: 4px;
+    }
+}
+
+
+@media (max-width: 940px) {
+    .main-container:not(.main-container-mob) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chessboard-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-container-mob,.main-container {
+        height: calc(100vh - 160px);
+    }
+
+
+    .main-container-mob {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 4px;
+        margin-right: 4px;
+        justify-content: flex-start;
+    }
+    .main-title {
+        display: none;
+    }
+    .term-block {
+        flex-direction: row;
+    }
+}
+

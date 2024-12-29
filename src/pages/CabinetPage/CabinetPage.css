@@ -1,0 +1,50 @@
+.password-input {
+    padding-right: 120px!important;
+}
+
+
+.select-wrapper {
+}
+
+@media (max-width: 1280px) {
+    .profile-main {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px) {
+    .info-block {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 900px) {
+    .form-first-col {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .select {
+        margin: 0!important;
+    }
+
+    .password-input-wrapper {
+        margin: 0!important;
+    }
+}
+
+
+@media (max-width: 769px) {
+    .password-input {
+        padding-right: 65px!important;
+    }
+}
+
+@media (max-width: 500px) {
+    .optionsBlock {
+        flex-direction: column;
+    }
+
+    .password-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,8 @@
+.checkbox {
+    white-space: nowrap;
+}
+
+.checkbox::after, .checkbox::before {
+    top: 50%;
+    transform: translateY(-50%);
+}
