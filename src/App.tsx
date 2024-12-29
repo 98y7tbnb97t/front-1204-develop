@@ -210,7 +210,7 @@ function App() {
       <>
         <Routes>
           <Route
-            path="/фффф"
+            path="/"
             element={
               <RequireAuth>
                 <LayoutAdaptive>
@@ -224,7 +224,7 @@ function App() {
           <Route
             path="/mygroups"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER', 'ADMIN']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER', 'ADMIN']}>
                 <LayoutAdaptive>
                   <MyGroups />
                 </LayoutAdaptive>
@@ -234,7 +234,7 @@ function App() {
           {/* <Route
             path="/mycomments"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER', 'ADMIN']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER', 'ADMIN']}>
                 <LayoutAdaptive>
                   <MyComments />
                 </LayoutAdaptive>
@@ -245,7 +245,7 @@ function App() {
             path="/comments"
             element={
               <RequireRole
-                roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'ADMIN']}
+                roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'ADMIN']}
               >
                 <LayoutAdaptive>
                   <Comments />
@@ -266,7 +266,7 @@ function App() {
           <Route
             path="/group/:groupId/program"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANER']}>
                 <LayoutAdaptive>
                   <ProgramPage />
                 </LayoutAdaptive>
@@ -287,7 +287,7 @@ function App() {
           <Route
             path="/group/:groupId/history"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANER']}>
                 <LayoutAdaptive>
                   <HistoryPage />
                 </LayoutAdaptive>
@@ -297,7 +297,7 @@ function App() {
           <Route
             path="/group/:groupId/description"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANER']}>
                 <LayoutAdaptive>
                   <DescriptionPage />
                 </LayoutAdaptive>
@@ -307,7 +307,7 @@ function App() {
           <Route
             path="/group/:groupId/homework/add"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <AddHomeworkPage />
@@ -319,7 +319,7 @@ function App() {
           <Route
             path="/group/:groupId/homework/edit/:homeworkId"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <AddHomeworkPage />
@@ -331,7 +331,7 @@ function App() {
           <Route
             path="/texts"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <TextsPage />
@@ -343,7 +343,7 @@ function App() {
           <Route
             path="/group/:groupId/homework"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <HomeworksCheckPage />
@@ -355,7 +355,7 @@ function App() {
           <Route
             path="/group/:groupId/homework/:homeworkId"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <HomeworkCheckPage />
@@ -369,7 +369,7 @@ function App() {
             element={
               <RequireNotDebtorStudent>
                 <RequireRole
-                  roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'STUDENT', 'TESTUSER']}
+                  roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'STUDENT', 'TESTUSER']}
                 >
                   <LayoutAdaptive>
                     <Suspense>
@@ -385,7 +385,7 @@ function App() {
             element={
               <RequireNotDebtorStudent>
                 <RequireRole
-                  roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'STUDENT', 'TESTUSER']}
+                  roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'STUDENT', 'TESTUSER']}
                 >
                   <LayoutAdaptive closedmenu={true}>
                     <Suspense>
@@ -400,7 +400,7 @@ function App() {
             path="/video"
             element={
               <RequireRole
-                roles={['NEWUSER', 
+                roles={[ 
                   'STUDENT',
                   'DIRECTOR',
                   'ZDIRECTOR',
@@ -424,7 +424,7 @@ function App() {
             path="/video/:groupId"
             element={
               <RequireRole
-                roles={['NEWUSER', 
+                roles={[ 
                   'STUDENT',
                   'DIRECTOR',
                   'ZDIRECTOR',
@@ -447,7 +447,7 @@ function App() {
             path="/lessons"
             element={
               <RequireRole
-                roles={['NEWUSER', 'STUDENT', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST']}
+                roles={[ 'STUDENT', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST']}
               >
                 <RequireNotDebtorStudent>
                   <RequireNotArchivedStudent>
@@ -463,7 +463,7 @@ function App() {
             path="/lesson/:groupId"
             element={
               <RequireRole
-                roles={['NEWUSER', 'STUDENT', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST']}
+                roles={[ 'STUDENT', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST']}
               >
                 <RequireNotDebtorStudent>
                   <RequireNotArchivedStudent>
@@ -478,7 +478,7 @@ function App() {
           <Route
             path="/permissions"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN']}>
                 <LayoutAdaptive>
                   <PermissionsPage />
                 </LayoutAdaptive>
@@ -488,7 +488,7 @@ function App() {
           <Route
             path="/program"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR']}>
                 <LayoutAdaptive>
                   <ProgramPage />
                 </LayoutAdaptive>
@@ -539,7 +539,7 @@ function App() {
           <Route
             path="/balance"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutAdaptive>
                   <BalancePage />
                 </LayoutAdaptive>
@@ -572,7 +572,7 @@ function App() {
           <Route
             path="/testlesson"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <CreateTestLesson />
@@ -596,7 +596,7 @@ function App() {
             path="/session/:groupId"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST']}>
                   <LayoutAdaptive>
                     <CreateSessionPage />
                   </LayoutAdaptive>
@@ -618,7 +618,7 @@ function App() {
             path="/Tournament/"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <Tournament/>
                 </LayoutTournament>
@@ -629,7 +629,7 @@ function App() {
           path="/TournamentPlayersList/"
           element={
             <RequireAuth>
-              <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+              <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
               <LayoutTournament>
                 <TournamentPlayersList  />
               </LayoutTournament>
@@ -641,7 +641,7 @@ function App() {
             path="/Tournament/:groupId/Swiss"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <CreateTournamentSwiss/>
                 </LayoutTournament></RequireRole>
@@ -652,7 +652,7 @@ function App() {
             path="/Tournament/:groupId/intergroup"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <CreateTournamentInterGroup/>
                 </LayoutTournament></RequireRole>
@@ -663,7 +663,7 @@ function App() {
             path="/Tournament/:groupId/interschool"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <CreateTournamentInterSchool/>
                 </LayoutTournament></RequireRole>
@@ -674,7 +674,7 @@ function App() {
             path="/Tournament/:groupId/area/Finish"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentFinish/>
                 </LayoutTournament></RequireRole>
@@ -685,7 +685,7 @@ function App() {
             path="/Tournament/:groupId/area/tostart"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TouranamentStart/>
                 </LayoutTournament></RequireRole>
@@ -696,7 +696,7 @@ function App() {
             path="/Tournament/:groupId/area/during"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentDuring/>
                 </LayoutTournament></RequireRole>
@@ -707,7 +707,7 @@ function App() {
             path="/Tournament/:groupId/area/beginning"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentBeginning/>
                 </LayoutTournament></RequireRole>
@@ -718,7 +718,7 @@ function App() {
             path="/Tournament/:groupId/interschool/Finish"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentFinish/>
                 </LayoutTournament></RequireRole>
@@ -729,7 +729,7 @@ function App() {
             path="/Tournament/:groupId/interschool/tostart"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TouranamentStart/>
                 </LayoutTournament></RequireRole>
@@ -740,7 +740,7 @@ function App() {
             path="/Tournament/:groupId/interschool/during"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentDuring/>
                 </LayoutTournament></RequireRole>
@@ -751,7 +751,7 @@ function App() {
             path="/Tournament/:groupId/interschool/beginning"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentBeginning/>
                 </LayoutTournament></RequireRole>
@@ -762,7 +762,7 @@ function App() {
             path="/Tournament/:groupId/intergroup/Finish"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentFinish/>
                 </LayoutTournament></RequireRole>
@@ -773,7 +773,7 @@ function App() {
             path="/Tournament/:groupId/intergroup/tostart"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TouranamentStart/>
                 </LayoutTournament></RequireRole>
@@ -784,7 +784,7 @@ function App() {
             path="/Tournament/:groupId/intergroup/during"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentDuring/>
                 </LayoutTournament></RequireRole>
@@ -795,7 +795,7 @@ function App() {
             path="/Tournament/:groupId/intergroup/beginning"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentBeginning/>
                 </LayoutTournament></RequireRole>
@@ -806,7 +806,7 @@ function App() {
             path="/Tournament/:groupId/Swiss/Finish"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentFinish/>
                 </LayoutTournament></RequireRole>
@@ -817,7 +817,7 @@ function App() {
             path="/Tournament/:groupId/Swiss/tostart"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TouranamentStart/>
                 </LayoutTournament>
@@ -829,7 +829,7 @@ function App() {
             path="/Tournament/:groupId/Swiss/during"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentDuring/>
                 </LayoutTournament></RequireRole>
@@ -840,7 +840,7 @@ function App() {
             path="/Tournament/:groupId/Swiss/beginning"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                 <LayoutTournament>
                   <TournamentBeginning/>
                 </LayoutTournament>
@@ -852,7 +852,7 @@ function App() {
             path="/Tournament/:groupId"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                   <LayoutTournament>
                     <CreateTournament />
                   </LayoutTournament>
@@ -864,7 +864,7 @@ function App() {
             path="/Tournament/:groupId/area"
             element={
               <RequireAuth>
-                <RequireRole roles={['NEWUSER', 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
+                <RequireRole roles={[ 'TRANER', 'TRANERMETODIST', 'DIRECTOR', 'ZDIRECTOR', 'STUDENT']}>
                   <LayoutTournament>
                     <CreateTournamentArea />
                   </LayoutTournament>
@@ -877,7 +877,7 @@ function App() {
             element={
               <RequireAuth>
                 <RequireRole
-                  roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'TRANER']}
+                  roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'TRANER']}
                 >
                   <LayoutAdaptive>
                     <CreatNewSessionPage />
@@ -891,7 +891,7 @@ function App() {
             element={
               <RequireAuth>
                 <RequireRole
-                  roles={['NEWUSER', 'TRANERMETODIST', 'TRANER', 'DIRECTOR', 'ZDIRECTOR']}
+                  roles={[ 'TRANERMETODIST', 'TRANER', 'DIRECTOR', 'ZDIRECTOR']}
                 >
                   <LayoutAdaptive>
                     <CreatNewSessionPage />
@@ -905,7 +905,7 @@ function App() {
             element={
               <RequireAuth>
                 <RequireRole
-                  roles={['NEWUSER', 
+                  roles={[ 
                     'DIRECTOR',
                     'ZDIRECTOR',
                     'TRANERMETODIST',
@@ -925,7 +925,7 @@ function App() {
             element={
               <RequireAuth>
                 <RequireRole
-                  roles={['NEWUSER', 
+                  roles={[ 
                     'DIRECTOR',
                     'ZDIRECTOR',
                     'TRANERMETODIST',
@@ -945,7 +945,7 @@ function App() {
             element={
               <RequireAuth>
                 <RequireRole
-                  roles={['NEWUSER', 
+                  roles={[ 
                     'DIRECTOR',
                     'ZDIRECTOR',
                     'TRANERMETODIST',
@@ -965,7 +965,7 @@ function App() {
             element={
               <RequireAuth>
                 <RequireRole
-                  roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'TRANER', 'STUDENT']}
+                  roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'TRANER', 'STUDENT']}
                 >
                   <LayoutAdaptive>
                     <SessionGamesPage />
@@ -979,7 +979,7 @@ function App() {
             path="/faq"
             element={
               <RequireRole
-                roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'STUDENT']}
+                roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANERMETODIST', 'STUDENT']}
               >
                 <LayoutAdaptive>
                   <Suspense>
@@ -992,7 +992,7 @@ function App() {
           <Route
             path="/faqtrainers"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'TRANER']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <FAQTrainersPage />
@@ -1004,7 +1004,7 @@ function App() {
           <Route
             path="/groupwaiting"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <GroupwaitingPage />
@@ -1016,7 +1016,7 @@ function App() {
           <Route
             path="/groupwaiting/archive"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <GroupwaitingArchivePage />
@@ -1038,7 +1038,7 @@ function App() {
           <Route
             path="/myestimates"
             element={
-              <RequireRole roles={['NEWUSER', 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANERMETODIST', 'TRANER', 'STUDENT']}>
+              <RequireRole roles={[ 'DIRECTOR', 'ZDIRECTOR', 'ADMIN', 'TRANERMETODIST', 'TRANER', 'STUDENT']}>
                 <LayoutAdaptive>
                   <Suspense>
                     <MyEstimatesPage />
